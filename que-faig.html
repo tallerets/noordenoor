@@ -26,12 +26,12 @@
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
             justify-content: flex-end;
-            gap: 30px;
-            padding: 0 20px;
+            gap: 40px;
+            padding: 0 60px;
         }
 
         nav a {
@@ -46,60 +46,107 @@
             opacity: 0.8;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
         h1 {
             font-family: 'Futura', sans-serif;
-            font-size: 48px;
+            font-size: 64px;
             text-align: center;
-            margin: 60px 0 60px 0;
+            margin: 80px 0 80px 0;
             color: #333;
+            font-weight: normal;
+            letter-spacing: 2px;
         }
 
-        .services-grid {
+        .services-section {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 0;
+            min-height: 500px;
         }
 
-        .service-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .services-section.reverse {
+            direction: rtl;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .services-section.reverse > * {
+            direction: ltr;
         }
 
         .service-image {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
         }
 
         .service-content {
-            padding: 30px;
-            background-color: #f9f9f9;
+            padding: 60px;
+            background-color: #f5f1eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-content.brown {
+            background-color: #8b7355;
+            color: white;
+        }
+
+        .service-content.brown .service-title {
+            color: white;
+        }
+
+        .service-content.brown .service-description {
+            color: #f0f0f0;
+        }
+
+        .service-content.brown .section-label {
+            color: #e8d4c4;
+        }
+
+        .service-content.brown .section-content {
+            color: #f0f0f0;
+        }
+
+        .service-content.brown .section-content li:before {
+            color: #e8d4c4;
+        }
+
+        .service-content.dark-blue {
+            background-color: #1a3a52;
+            color: white;
+        }
+
+        .service-content.dark-blue .service-title {
+            color: white;
+        }
+
+        .service-content.dark-blue .service-description {
+            color: #e8e8e8;
+        }
+
+        .service-content.dark-blue .section-label {
+            color: #7eb3d4;
+        }
+
+        .service-content.dark-blue .section-content {
+            color: #e8e8e8;
+        }
+
+        .service-content.dark-blue .section-content li:before {
+            color: #7eb3d4;
         }
 
         .service-title {
             font-family: 'Futura', sans-serif;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 25px;
             color: #333;
+            font-weight: normal;
         }
 
         .service-description {
             font-size: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #555;
             line-height: 1.8;
         }
@@ -112,15 +159,16 @@
             color: #4a90e2;
             font-family: 'Futura', sans-serif;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 12px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         .section-content {
             font-size: 15px;
             color: #555;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .section-content ul {
@@ -145,21 +193,36 @@
             text-align: center;
             padding: 20px;
             font-size: 14px;
+            margin-top: 0;
         }
 
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
                 gap: 15px;
+                padding: 0 20px;
             }
 
             h1 {
-                font-size: 32px;
+                font-size: 40px;
+                margin: 40px 0 40px 0;
             }
 
-            .services-grid {
+            .services-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                min-height: auto;
+            }
+
+            .services-section.reverse {
+                direction: ltr;
+            }
+
+            .service-content {
+                padding: 40px 20px;
+            }
+
+            .service-title {
+                font-size: 24px;
             }
         }
     </style>
@@ -173,139 +236,137 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div>
         <h1>Que faig ?</h1>
 
-        <div class="services-grid">
-            <!-- Service 1: Formació i docència -->
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x300?text=Formacio+i+docencia" alt="Formació i docència" class="service-image">
-                <div class="service-content">
-                    <div class="service-title">Formació i docència</div>
-                    
-                    <div class="service-description">
-                        Dissenyo i facilito formacions adaptades a diferents contextos, combinant creativitat, participació i eines pràctiques.
-                    </div>
+        <!-- Service 1: Formació i docència -->
+        <div class="services-section">
+            <img src="https://via.placeholder.com/600x500?text=Formacio+i+docencia" alt="Formació i docència" class="service-image">
+            <div class="service-content">
+                <div class="service-title">Formació i docència</div>
+                
+                <div class="service-description">
+                    Dissenyo i facilito formacions adaptades a diferents contextos, combinant creativitat, participació i eines pràctiques.
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-label">Formació</div>
-                        <div class="section-content">
-                            Graduada en Turisme i gestió de projectes.<br>
-                            CP docència per la formació laboral<br>
-                            + Màster professorat Marketing i Comunicació
-                        </div>
+                <div class="service-section">
+                    <div class="section-label">Formació</div>
+                    <div class="section-content">
+                        Graduada en Turisme i gestió de projectes.<br>
+                        CP docència per la formació laboral<br>
+                        + Màster professorat Marketing i Comunicació
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-label">Àmbits de formació:</div>
-                        <div class="section-content">
-                            <ul>
-                                <li>educació i metodologies participatives</li>
-                                <li>creativitat aplicada, facilitació de grups</li>
-                                <li>emprenedoria i gestió de projectes</li>
-                                <li>lideratge i gestió d'equips</li>
-                                <li>gestió de projectes</li>
-                                <li>comunicació</li>
-                                <li>dinamització comunitària</li>
-                            </ul>
-                        </div>
+                <div class="service-section">
+                    <div class="section-label">Àmbits de formació:</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>educació i metodologies participatives</li>
+                            <li>creativitat aplicada, facilitació de grups</li>
+                            <li>emprenedoria i gestió de projectes</li>
+                            <li>lideratge i gestió d'equips</li>
+                            <li>gestió de projectes</li>
+                            <li>comunicació</li>
+                            <li>dinamització comunitària</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Service 2: Facilitació i acompanyament -->
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x300?text=Facilitacio+i+acompanyament" alt="Facilitació i acompanyament" class="service-image">
-                <div class="service-content">
-                    <div class="service-title">Facilitació i acompanyament</div>
-                    
-                    <div class="service-description">
-                        Acompanyo processos, equips i projectes des d'una mirada creativa, humana i participativa.
+        <!-- Service 2: Facilitació i acompanyament -->
+        <div class="services-section reverse">
+            <img src="https://via.placeholder.com/600x500?text=Facilitacio+i+acompanyament" alt="Facilitació i acompanyament" class="service-image">
+            <div class="service-content brown">
+                <div class="service-title">Facilitació i acompanyament</div>
+                
+                <div class="service-description">
+                    Acompanyo processos, equips i projectes des d'una mirada creativa, humana i participativa.
+                </div>
+
+                <div class="service-section">
+                    <div class="section-label">Enfoc:</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>facilitació de grups</li>
+                            <li>sessions participatives</li>
+                            <li>processos creatius</li>
+                            <li>activació d'equips</li>
+                            <li>acompanyament a projectes</li>
+                            <li>conceptualització d'idees</li>
+                            <li>metodologies col·laboratives</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-label">Enfoc:</div>
-                        <div class="section-content">
-                            <ul>
-                                <li>facilitació de grups</li>
-                                <li>sessions participatives</li>
-                                <li>processos creatius</li>
-                                <li>activació d'equips</li>
-                                <li>acompanyament a projectes</li>
-                                <li>conceptualització d'idees</li>
-                                <li>metodologies col·laboratives</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-section">
-                        <div class="section-content">
-                            <em>M'interessa especialment generar espais de connexió, aprenentatge i transformació.</em>
-                        </div>
+                <div class="service-section">
+                    <div class="section-content">
+                        <em>M'interessa especialment generar espais de connexió, aprenentatge i transformació.</em>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Service 3: Projectes culturals, creatius i comunitari -->
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x300?text=Projectes+culturals" alt="Projectes culturals" class="service-image">
-                <div class="service-content">
-                    <div class="service-title">Projectes culturals, creatius i comunitari</div>
-                    
-                    <div class="service-description">
-                        Impulso projectes culturals i comunitaris vinculats a la creativitat, la participació i el territori.
+        <!-- Service 3: Projectes culturals, creatius i comunitari -->
+        <div class="services-section">
+            <img src="https://via.placeholder.com/600x500?text=Projectes+culturals" alt="Projectes culturals" class="service-image">
+            <div class="service-content">
+                <div class="service-title">Projectes culturals, creatius i comunitari</div>
+                
+                <div class="service-description">
+                    Impulso projectes culturals i comunitaris vinculats a la creativitat, la participació i el territori.
+                </div>
+
+                <div class="service-section">
+                    <div class="section-label">Tipologia:</div>
+                    <div class="section-content">
+                        <ul>
+                            <li>tallers creatius tèxtils</li>
+                            <li>tallers creatius d'arts plàstiques</li>
+                            <li>tallers comunitaris</li>
+                            <li>dinamització artística</li>
+                            <li>gestió de projectes i esdeveniments culturals</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-label">Tipologia:</div>
-                        <div class="section-content">
-                            <ul>
-                                <li>tallers creatius tèxtils</li>
-                                <li>tallers creatius d'arts plàstiques</li>
-                                <li>tallers comunitaris</li>
-                                <li>dinamització artística</li>
-                                <li>gestió de projectes i esdeveniments culturals</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-section">
-                        <div class="section-content">
-                            <em>Treball des d'una mirada propera i accessible desenvolupant activitats, programacions i experiències que connectin persones, cultura i comunitat.</em>
-                        </div>
+                <div class="service-section">
+                    <div class="section-content">
+                        <em>Treball des d'una mirada propera i accessible desenvolupant activitats, programacions i experiències que connectin persones, cultura i comunitat.</em>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Service 4: Comunicació i univers visual -->
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x300?text=Comunicacio+i+visual" alt="Comunicació i univers visual" class="service-image">
-                <div class="service-content">
-                    <div class="service-title">Comunicació i univers visual</div>
-                    
-                    <div class="service-section">
-                        <div class="section-label">Experiència en:</div>
-                        <div class="section-content">
-                            comunicació, marca, storytelling, il·lustració, contingut
-                        </div>
+        <!-- Service 4: Comunicació i univers visual -->
+        <div class="services-section reverse">
+            <img src="https://via.placeholder.com/600x500?text=Comunicacio+i+visual" alt="Comunicació i univers visual" class="service-image">
+            <div class="service-content dark-blue">
+                <div class="service-title">Comunicació i univers visual</div>
+                
+                <div class="service-section">
+                    <div class="section-label">Experiència en:</div>
+                    <div class="section-content">
+                        comunicació, marca, storytelling, il·lustració, contingut
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-content">
-                            <p><strong>La comunicació visual i la creativitat formen part central de la meva manera de treballar.</strong></p>
-                        </div>
+                <div class="service-section">
+                    <div class="section-content">
+                        <p><strong>La comunicació visual i la creativitat formen part central de la meva manera de treballar.</strong></p>
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-content">
-                            <p>Desenvolupo continguts, narratives visuals i materials creatius per projectes culturals, educatius i comunitaris.</p>
-                        </div>
+                <div class="service-section">
+                    <div class="section-content">
+                        <p>Desenvolupo continguts, narratives visuals i materials creatius per projectes culturals, educatius i comunitaris.</p>
                     </div>
+                </div>
 
-                    <div class="service-section">
-                        <div class="section-content">
-                            <p>Il·lustro idees normalment de caïre comunitari o costumbrista. M'agrada parlar de la societat i del barri així com de la vida mundana i sencilla</p>
-                        </div>
+                <div class="service-section">
+                    <div class="section-content">
+                        <p>Il·lustro idees normalment de caïre comunitari o costumbrista. M'agrada parlar de la societat i del barri així com de la vida mundana i sencilla</p>
                     </div>
                 </div>
             </div>
