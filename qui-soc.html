@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui Soc - Noor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia Pro', Georgia, serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #8b7355;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Futura', sans-serif;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-family: 'Futura', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin: 60px 0 60px 0;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .section:nth-child(3) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .section:nth-child(3) .section-image {
+            order: 2;
+        }
+
+        .section:nth-child(3) .section-text {
+            order: 1;
+        }
+
+        .section-text {
+            padding: 20px;
+        }
+
+        .section-text p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .section-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .initiatives-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .initiatives-list {
+            list-style: none;
+        }
+
+        .initiatives-list li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        .initiatives-list li:before {
+            content: "• ";
+            color: #4a90e2;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .section-content {
+            margin-bottom: 30px;
+        }
+
+        .interests-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .interests-list {
+            list-style: none;
+        }
+
+        .interests-list li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #555;
+        }
+
+        .interests-list li:before {
+            content: "• ";
+            color: #4a90e2;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section:nth-child(3) .section-image {
+                order: unset;
+            }
+
+            .section:nth-child(3) .section-text {
+                order: unset;
+            }
+
+            .initiatives-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">hola soc la noor</a>
+            <a href="que-faig.html">Que faig ?</a>
+            <a href="qui-soc.html">qui soc</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Qui soc</h1>
+
+        <!-- Part 1: Introduction -->
+        <div class="section">
+            <div class="section-text">
+                <p>
+                    Sóc la Noor, docent, facilitadora i gestora de projectes creatius, culturals i formativos.
+                </p>
+                <p>
+                    Al llarg de la meva trajectòria he treballat en àmbits diversos vinculats a la formació, la comunicació, la gestió de projectes, l'experiència de client i la coordinació d'equips, desenvolupant una mirada transversal que connecta creativitat, estratègia i persones.
+                </p>
+                <p>
+                    He treballat tant en entorns empresarials internacionals com en projectes culturals socials i comunitaris.
+                </p>
+            </div>
+            <img src="https://via.placeholder.com/400x500?text=Qui+soc+1" alt="Noor Portrait" class="section-image">
+        </div>
+
+        <!-- Part 2: Algunes iniciatives -->
+        <div class="section">
+            <div class="section-text">
+                <div class="section-title">Algunes iniciatives</div>
+                
+                <div class="initiatives-grid">
+                    <div class="section-content">
+                        <ul class="initiatives-list">
+                            <li>formació i onboarding</li>
+                            <li>gestió de projectes</li>
+                            <li>customer success</li>
+                            <li>facilitació de grups</li>
+                            <li>comunicació i contingut</li>
+                            <li>experiència de client</li>
+                            <li>dinamització d'equips</li>
+                            <li>desenvolupament de processos i recursos formativos</li>
+                        </ul>
+                    </div>
+                    <div class="section-content">
+                        <div class="interests-title">M'interessen:</div>
+                        <ul class="interests-list">
+                            <li>les metodologies creatives</li>
+                            <li>l'aprenentatge experiencial</li>
+                            <li>la facilitació de processos</li>
+                            <li>la cultura de proximitat</li>
+                            <li>la comunicació humana</li>
+                            <li>l'emprenedoria amb impacle social</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <img src="https://via.placeholder.com/400x500?text=Algunes+iniciatives" alt="Workshop" class="section-image">
+        </div>
+
+        <!-- Part 3: Actualment -->
+        <div class="section">
+            <div class="section-text">
+                <p>
+                    Actualment combino aquesta experiència amb el desenvolupament de projectes educatius, culturals i creatius, dissenyant tallers, formacions i experiències participatives per a escoles, equips, entitats i comunitats.
+                </p>
+                <p>
+                    També sóc fundadora de Tallerets, un espai creatiu i associatiu des d'on impulsem activitats, programació cultural i projectes de barri vinculats a la creativitat, l'aprenentatge i la participació comunitaria.
+                </p>
+            </div>
+            <img src="https://via.placeholder.com/400x500?text=Tallerets" alt="Tallerets Workshop" class="section-image">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Noor. Tots els drets reservats.</p>
+    </footer>
+</body>
+</html>
